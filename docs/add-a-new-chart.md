@@ -178,7 +178,7 @@ RAWGraphs allows four kind of options: number, text lists, boolean values, color
 
 Visual options can be enabled according to the value of another option, or can be repeated for dimensions allowing multiple values.
 
-Furthermore, `colorScale` options have a slightly different syntax sicne you must define on which dimension it is based on (in our case, the `color` dimension).
+Furthermore, `colorScale` options have a slightly different syntax since you must define on which dimension it is based on (in our case, the `color` dimension).
 
 For a complete desription please refer to the [API documentation]().
 
@@ -198,9 +198,9 @@ export function render(node, data, visualOptions, mapping, originalData, styles)
 }
 ```
 
-As you cna see by default we import d3.js and a couple of utilities from RAWGraphs, but you are not forced to do so - you can use vanilla javascript or any other library in the chart.
+As you can see by default we import d3.js and a couple of utilities from RAWGraphs, but you are not forced to do so - you can use vanilla javascript or any other library in the chart.
 
-The render function indeed will  provide a DOM `node` (by default an SVG), the data, the visual options, and the mapping options defined by the user.
+The render function indeed will provide a DOM `node` (by default an SVG), the data, the visual options, and the mapping options defined by the user.
 
 Withing the given node you can do whatever you want.
 
@@ -290,13 +290,15 @@ Legend width and position can be exposed as visual variable (see section [5. Def
 
 #### 8. Add styles
 
-Finally, RAWGraphs bring some built-in styles that you can use in your chart. To use them, at the beginning of your chart code improt them:
+Finally, RAWGraphs bring some built-in styles that you can use in your chart. To use them, at the beginning of your chart code you should import them:
 
 ```javascript
 import '../d3-styles.js'
 ```
 
-You can find the styles in the `src/styles/base.css`. even if it's a CSS file, RAWGprahs parse it as a Javascript object and therefore is not possible to use complex css selectors. Furthermore, even if they are described as classes they are not applied as classes but as inline code. In this way it's possible to export the SVG and open it in any vector editor without losing the styles.
+You can find the styles in the `src/styles/base.css`. Even if it's a CSS file, RAWGprahs parse it as a Javascript object and therefore is not possible to use complex css selectors.
+
+Furthermore, even if they are described as classes they are not applied as classes but as inline code. In this way it's possible to export the SVG and open it in any vector editor without losing the styles.
 
 Let's add a title to our visualisation. In the `render` function, add:
 
@@ -317,7 +319,9 @@ Finally, to use the chart in the rawgraphs app you must add it to the file `src/
 export { default as myChart } from './myChart'
 ```
 
-you can test locally in the sandbox environment bu following the steps in next section, or otherwise you can test it in the RAWGraphs app by following the [instruction in the main readme file](https://github.com/rawgraphs/rawgraphs-charts/tree/docs#creating-a-build-and-using-locally-in-rawgraphs-app).
+You can test locally in the sandbox environment by following the steps in next section.
+
+Or otherwise, you can test it in the RAWGraphs app by following the [instruction in the main readme file](https://github.com/rawgraphs/rawgraphs-charts/tree/docs#creating-a-build-and-using-locally-in-rawgraphs-app).
 
 ## Test the chart in the sandbox
 
@@ -331,7 +335,9 @@ To add a new configuration, browse the `example/configurations` folder.
 
 Create a new file (e.g. `myChart_test.js`).
 
-First of all, you must load a test dataset. You can find some in the `example/datasets` folder or you can add your own. for this example we will use the movies dataset provided by RAWGraphs.  To import it write:
+First of all, you must load a test dataset. You can find some in the `example/datasets` folder or you can add your own. for this example we will use the movies dataset provided by RAWGraphs. 
+
+To import it write:
 
 ```javascript
 import data from '../datasets/Movies.tsv'
@@ -394,7 +400,7 @@ It will create a localhost running all the example configurations at the address
 
 To test your work in the RAWGraphs app interface, you need to [clone and install dependecies for the RAWGraphs-app repo](https://github.com/rawgraphs/rawgraphs-app#instructions-mac-os).
 
-In terminal, browse the folder containging `rawgraphs-charts` and create a build with the command:
+Open a Terminal and browse the folder containging `rawgraphs-charts` and create a build with the command:
 
 ```shell
 npm run build
@@ -406,13 +412,13 @@ Then create a link with the command:
 yarn link
 ```
 
-Open the terminal and browse the folder containing rawgraphs-app, link the local chart with the command:
+Open Terminal and browse the folder containing rawgraphs-app, link the local chart with the command:
 
 ```shell
 yarn link "@rawgraphs/rawgraphs-charts"
 ```
 
-In `ragraphs-app` repository, import your new chart in the file `src/charts.js`:
+In `rawgraphs-app` repository, import your new chart in the file `src/charts.js`:
 
 ```js
 import {
